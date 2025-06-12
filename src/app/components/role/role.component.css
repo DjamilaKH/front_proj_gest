@@ -1,0 +1,77 @@
+.container {
+  max-width: 800px;
+  margin-top: 50px;
+  margin-left: 300px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #a60000; /* Tunisair Rouge */
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+button {
+  grid-column: span 2;
+  padding: 10px;
+  background-color: #a60000; /* Rouge Tunisair */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #800000;
+}
+
+/* Présentation des cartes */
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.role-card {
+  background-color: #fefefe;
+  border-left: 5px solid #a60000;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.role-id {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.role-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}

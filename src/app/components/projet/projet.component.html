@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Espace Chef  Projet</h2>
+  <h2>Création de projet</h2>
+
+  <form [formGroup]="projetForm" (ngSubmit)="onSubmit()">
+    <label>Titre :</label>
+    <input formControlName="titre" />
+
+    <label>Description :</label>
+    <input formControlName="description" />
+
+    <label>Direction :</label>
+    <input formControlName="direction" />
+
+    <label>Budget :</label>
+    <input type="number" formControlName="budget" />
+
+    <label>Date de début :</label>
+    <input type="date" formControlName="dateDebut" />
+
+    <label>Date de fin :</label>
+    <input type="date" formControlName="dateFin" />
+
+    <label>Statut :</label>
+    <input formControlName="statut" />
+
+    <label>Chef de Projet ID :</label>
+    <input formControlName="chefProjetId" />
+
+    <button type="submit">Créer le projet</button>
+    <button routerLink="/activites">créer Activité</button>
+
+  </form>
+</div>

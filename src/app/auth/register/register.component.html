@@ -1,0 +1,53 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    <h2>Créer un compte</h2>
+
+    <div class="form-group">
+      <label>Nom</label>
+      <input formControlName="nom" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>Prénom</label>
+      <input formControlName="prenom" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>Nom d'utilisateur</label>
+      <input formControlName="userName" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input formControlName="email" type="email" />
+    </div>
+
+    <div class="form-group">
+      <label>Téléphone</label>
+      <input formControlName="tel" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>Mot de passe</label>
+      <input formControlName="motDePasse" type="password" />
+    </div>
+
+    <div class="form-group">
+      <label>ID Projet</label>
+      <input formControlName="projetId" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>ID Rôle</label>
+      <input formControlName="roleId" type="text" />
+    </div>
+
+   <div class="button-group">
+  <button type="submit" [disabled]="registerForm.invalid">S’inscrire</button>
+  <button type="button" class="return-button" (click)="goBack()">Revenir à la page précédente</button>
+</div>
+
+<p class="message">{{ message }}</p>
+
+  </form>
+</div>

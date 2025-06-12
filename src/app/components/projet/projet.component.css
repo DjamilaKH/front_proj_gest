@@ -1,0 +1,52 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.8); /* blanc avec opacité */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px); /* optionnel pour un effet flou stylé */
+}
+
+h2 {
+  text-align: center;
+  color: #a60000; /* Rouge Tunisair */
+  margin-bottom: 2rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  color: #333333; /* Gris foncé */
+}
+
+input, select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: #f5f5f5; /* gris clair */
+}
+
+button {
+  grid-column: span 2;
+  padding: 10px;
+  background-color: #a60000; /* Rouge Tunisair */
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #800000; /* rouge plus foncé */
+}

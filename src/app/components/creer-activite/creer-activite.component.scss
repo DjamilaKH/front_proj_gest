@@ -1,0 +1,60 @@
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fdfdfd; /* blanc cassé */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(163, 0, 0, 0.2); /* ombre rouge doux */
+  border: 1px solid #a30000; /* bord tunisair */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #a30000;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+button {
+  background-color: #a30000; /* rouge tunisair */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #d32f2f; /* rouge clair au hover */
+}
+
+div[ngIf] {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}

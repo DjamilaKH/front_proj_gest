@@ -1,0 +1,35 @@
+
+<form [formGroup]="activiteForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="titre">Titre *</label>
+    <input id="titre" formControlName="titre" type="text" />
+    <div *ngIf="activiteForm.get('titre')?.invalid && activiteForm.get('titre')?.touched">
+      Le titre est obligatoire.
+    </div>
+  </div>
+
+  <div>
+    <label for="categorie">Catégorie</label>
+    <input id="categorie" formControlName="categorie" type="text" />
+  </div>
+
+  <div>
+    <label for="delai">Délai</label>
+    <input id="delai" formControlName="delai" type="date" />
+  </div>
+
+  <div>
+    <label for="projetId">Projet ID *</label>
+    <input id="projetId" formControlName="projetId" type="text" />
+  </div>
+
+  <div>
+    <label for="responsableId">Responsable ID *</label>
+    <input id="responsableId" formControlName="responsableId" type="text" />
+  </div>
+
+  <button type="submit" [disabled]="activiteForm.invalid">Créer Activité</button>
+</form>
+
+<div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>

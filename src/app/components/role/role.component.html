@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Espace Admin</h2>
+  <h2>Affection des rôles</h2>
+
+  <form [formGroup]="roleForm" (ngSubmit)="onSubmit()">
+    <label>ID :</label>
+    <input type="text" formControlName="id" />
+
+    <label>Nom du rôle :</label>
+    <input type="text" formControlName="nom" required />
+
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <div class="roles-list">
+    <div class="role-card" *ngFor="let role of roles">
+      <div class="role-id">ID : {{ role.id }}</div>
+      <div class="role-name">Nom : {{ role.nom }}</div>
+    </div>
+  </div>
+</div>

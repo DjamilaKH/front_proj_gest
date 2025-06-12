@@ -1,0 +1,49 @@
+.main-footer {
+    // position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #0033A0;
+  color: white;
+  padding: 10px 30px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  animation: fadeInFooter 1.2s ease;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-left, .footer-center, .footer-right {
+  margin: 5px 10px;
+}
+
+.footer-right .social {
+  margin-right: 10px;
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-right .social:hover {
+  color: white;
+}
+
+/* Animation */
+@keyframes fadeInFooter {
+  from {
+    bottom: -50px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
