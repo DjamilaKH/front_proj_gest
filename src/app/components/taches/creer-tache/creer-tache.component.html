@@ -1,0 +1,13 @@
+<h2>Créer une tâche</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Titre:</label>
+  <input type="text" formControlName="titre" />
+
+  <label>Activité:</label>
+  <input type="text" formControlName="activiteId" placeholder="ID de l'activité" />
+
+  <label>Membre:</label>
+  <input type="text" formControlName="membreId" placeholder="ID du membre" />
+
+  <button type="submit" [disabled]="form.invalid">Créer</button>
+</form>

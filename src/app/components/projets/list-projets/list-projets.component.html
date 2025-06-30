@@ -1,0 +1,33 @@
+<div class="projets-table">
+  <h2>Liste des projets</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        <th>Budget</th>
+        <th>Direction</th>
+        <th>Détails</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let projet of projets">
+        <td>{{ projet.titre }}</td>
+        <td>{{ projet.description }}</td>
+        <td>{{ projet.dateDebut | date:'dd/MM/yyyy' }}</td>
+        <td>{{ projet.dateFin | date:'dd/MM/yyyy' }}</td>
+        <td>{{ projet.budget | currency:'TND' }}</td>
+        <td>{{ projet.direction }}</td>
+        <td><a [routerLink]="['/detail-projet', projet.id]">
+  <span class="material-icons">info</span>
+</a>
+
+
+</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

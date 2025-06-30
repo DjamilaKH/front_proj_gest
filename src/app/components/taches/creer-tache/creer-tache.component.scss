@@ -1,0 +1,60 @@
+/* creer-tache.component.scss */
+
+h2 {
+  color: #3f51b5;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input[type="text"] {
+  padding: 10px 12px;
+  border: 1.8px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #3f51b5;
+    outline: none;
+  }
+}
+
+button[type="submit"] {
+  padding: 12px;
+  background-color: #3f51b5;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background-color: #303f9f;
+  }
+
+  &:disabled {
+    background-color: #a3a3a3;
+    cursor: not-allowed;
+  }
+}

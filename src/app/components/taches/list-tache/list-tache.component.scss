@@ -1,0 +1,109 @@
+h2 {
+  text-align: center;
+  color: #c00;          /* rouge tunisien */
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 2rem auto; /* centrage horizontal + marge bas */
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #fff;  /* blanc */
+  box-shadow: 0 2px 8px rgba(192, 0, 0, 0.15); /* ombre rouge douce */
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+thead {
+  background-color: #c00;  /* rouge tunisien */
+  color: white;
+}
+
+th, td {
+  padding: 14px 20px;
+  text-align: center;     /* centrage contenu */
+  font-size: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+tbody tr:hover {
+  background-color: #fee6e6;  /* rouge très clair au survol */
+  cursor: pointer;
+}
+
+button {
+  margin: 0 4px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+button:first-child {
+  background-color: #ff4d4d;  /* rouge vif */
+  color: white;
+}
+
+button:first-child:hover {
+  background-color: #cc0000;
+}
+
+button:last-child {
+  background-color: #aaa;    /* gris clair */
+  color: white;
+}
+
+button:last-child:hover {
+  background-color: #888;
+}
+
+/* Responsive pour mobile */
+@media screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    background-color: #fff0f0;
+    border: 1px solid #f0c0c0;
+    border-radius: 8px;
+    padding: 12px 10px;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    font-size: 0.95rem;
+    border-bottom: none;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-weight: 700;
+    color: #c00;
+  }
+
+  button {
+    margin: 6px 4px 0 0;
+    width: auto;
+  }
+}

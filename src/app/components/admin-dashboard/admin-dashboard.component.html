@@ -1,0 +1,57 @@
+<div class="admin-dashboard">
+  <aside class="sidebar">
+    <h2>{{ utilisateur.roleNom | titlecase }}</h2>
+    <ul>
+      <li *ngIf="isAdmin"><a routerLink="/roles">🔐 Gestion des rôles</a></li>
+      <li *ngIf="isAdmin"><a routerLink="/users">👥 Utilisateurs</a></li>
+<a class="card" routerLink="/rapports" *ngIf="isAdmin">
+  <h3>📊 Rapports</h3>
+  <p>Analyse des projets et productivité.</p>
+</a>
+      <li *ngIf="isAdmin || isChef"><a routerLink="/projets">📁 Projets</a></li>
+      <li *ngIf="isAdmin || isChef"><a routerLink="/activites">📌 Activités</a></li>
+      <li *ngIf="isAdmin || isChef"><a routerLink="/taches/create">📝 Tâches</a>
+      <p><button routerLink="/taches" class="btn-taches">Voir les tâches</button></p>
+</li>
+      <li><a routerLink="/">🏠 Accueil</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <h1>Bienvenue {{ utilisateur.nom }} {{ utilisateur.prenom }}</h1>
+    <p>Rôle : <strong>{{ utilisateur.roleNom }}</strong></p>
+
+    <!-- ✅ Bouton de création de projet -->
+    <div class="button-container">
+      <button class="btn-create" (click)="creerProjet()">➕ Créer un projet</button>
+    </div>
+
+    <!-- ✅ Cartes cliquables -->
+    <section class="card-container">
+      <a class="card" routerLink="/users" *ngIf="isAdmin">
+        <h3>👥 Utilisateurs</h3>
+        <p>Créer, modifier ou supprimer les comptes.</p>
+      </a>
+
+      <a class="card" routerLink="/projets" *ngIf="isAdmin || isChef">
+        <h3>📁 Projets</h3>
+        <p>Gestion des projets en cours et archivés.</p>
+      </a>
+
+      <a class="card" routerLink="/activites" *ngIf="isAdmin || isChef">
+        <h3>📌 Activités</h3>
+        <p>Suivi des activités assignées aux membres.</p>
+      </a>
+
+      <a class="card" routerLink="/taches/create" *ngIf="isAdmin || isChef">
+        <h3>📝 Tâches</h3>
+        <p>Planification et gestion des tâches.</p>
+      </a>
+
+      <a class="card" routerLink="/rapports" *ngIf="isAdmin">
+        <h3>📊 Rapports</h3>
+        <p>Analyse des projets et productivité.</p>
+      </a>
+    </section>
+  </main>
+</div>

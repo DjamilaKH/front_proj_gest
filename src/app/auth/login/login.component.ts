@@ -29,12 +29,43 @@ export class LoginComponent {
 
       this.authService.signin(credentials).subscribe({
         next: (res) => {
-          localStorage.setItem('token', res.token); // ou res.accessToken selon backend
-          this.router.navigate(['/dashboard']); // ou redirection vers une autre page
+          console.log('✅ Connexion réussie :', res);
+
+          // Stockage local
+          localStorage.setItem('token', res.token);
+
+          localStorage.setItem('utilisateur', JSON.stringify(res.utilisateur));
+
+          const roleNom = res.utilisateur?.roleNom?.toLowerCase();
+          console.log('🎯 Rôle reçu :', roleNom);
+
+          if (!roleNom) {
+            console.warn('⚠️ Rôle non défini, redirection par défaut.');
+            this.router.navigate(['/dashboard']);
+            return;
+          }
+
+          // Petite pause pour éviter les erreurs de navigation
+          setTimeout(() => {
+            switch (roleNom) {
+              case 'admin':
+                console.log('🔁 Redirection vers /admin-dashboard');
+                this.router.navigate(['/admin-dashboard']);
+                break;
+              case 'chef':
+                console.log('🔁 Redirection vers /chef-dashboard');
+                this.router.navigate(['/chef-dashboard']);
+                break;
+              default:
+                console.log('🔁 Redirection vers /dashboard');
+                this.router.navigate(['/dashboard']);
+                break;
+            }
+          }, 100);
         },
         error: (err) => {
           this.erreurConnexion = 'Échec de connexion. Vérifiez vos identifiants.';
-          console.error('Erreur de connexion :', err);
+          console.error('❌ Erreur de connexion :', err);
         }
       });
     }

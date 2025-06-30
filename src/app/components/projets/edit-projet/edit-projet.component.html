@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2 style="text-align:center; color:#a30e1d;">Modifier le projet</h2>
+
+  <label>Titre :</label>
+  <input formControlName="titre" type="text"><br>
+
+  <label>Description :</label>
+  <textarea formControlName="description"></textarea><br>
+
+  <label>Direction :</label>
+  <input formControlName="direction" type="text"><br>
+
+  <label>Budget :</label>
+  <input formControlName="budget" type="number"><br>
+
+  <label>Date début :</label>
+  <input formControlName="dateDebut" type="date"><br>
+
+  <label>Date fin :</label>
+  <input formControlName="dateFin" type="date"><br>
+
+  <label>Statut :</label>
+  <input formControlName="statut" type="text"><br>
+
+  <button type="submit">Enregistrer les modifications</button>
+</form>

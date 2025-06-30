@@ -1,0 +1,48 @@
+<div *ngIf="tacheModifiee" class="update-tache-container">
+  <h2>Modifier la tâche</h2>
+  <form (ngSubmit)="enregistrerModification()" #tacheForm="ngForm">
+    <!-- Titre -->
+    <div class="form-group">
+      <label for="titre">Titre</label>
+      <input
+        type="text"
+        id="titre"
+        name="titre"
+        [(ngModel)]="tacheModifiee.titre"
+        required
+        class="form-control"
+      />
+    </div>
+
+    <!-- Statut -->
+    <div class="form-group">
+      <label for="statut">Statut</label>
+      <select
+        id="statut"
+        name="statut"
+        [(ngModel)]="tacheModifiee.statut"
+        required
+        class="form-control"
+      >
+        <option value="en attente">En attente</option>
+        <option value="en cours">En cours</option>
+        <option value="terminée">Terminée</option>
+      </select>
+    </div>
+
+    <!-- Autres champs si besoin... -->
+
+    <div class="buttons">
+      <button type="submit" [disabled]="!tacheForm.form.valid" class="btn btn-primary">
+        Enregistrer
+      </button>
+      <button type="button" (click)="annulerModification()" class="btn btn-secondary">
+        Annuler
+      </button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="!tacheModifiee" class="no-tache-message">
+  <p>Aucune tâche à modifier.</p>
+</div>

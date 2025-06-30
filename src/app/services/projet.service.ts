@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Projet } from '../models/projet';
 
@@ -15,4 +15,24 @@ export class ProjetService {
   create(projet: Projet): Observable<Projet> {
     return this.http.post<Projet>(this.apiUrl, projet);
   }
+  getProjets(): Observable<any[]> {
+    const headers = new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem('token')
+    });
+
+    return this.http.get<any[]>(this.apiUrl, { headers });
+  }
+updateProjet(id: string, data: any) {
+  const token = localStorage.getItem('token');
+  const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+  return this.http.put(`${this.apiUrl}/${id}`, data, { headers });
+}
+
+getProjetById(id: string) {
+  const token = localStorage.getItem('token');  // Ou où tu stockes ton token
+  const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+return this.http.get<Projet>(`${this.apiUrl}/${id}`, { headers });
+}
 }

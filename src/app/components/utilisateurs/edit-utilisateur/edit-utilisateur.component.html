@@ -1,0 +1,26 @@
+<div class="edit-form">
+  <h2>Modifier l'utilisateur</h2>
+
+<form [formGroup]="utilisateurForm" (ngSubmit)="onSubmit()" *ngIf="utilisateurForm">
+  <div><pre>{{ utilisateurForm.value | json }}</pre></div>
+    <label>Nom :</label>
+    <input formControlName="nom" type="text" />
+
+    <label>Prénom :</label>
+    <input formControlName="prenom" type="text" />
+
+    <label>Email :</label>
+    <input formControlName="email" type="email" />
+
+    <label>Téléphone :</label>
+    <input formControlName="tel" type="text" />
+
+    <label>Rôle :</label>
+    <input formControlName="roleId" type="text" />
+
+    <label>Projet :</label>
+    <input formControlName="projetId" type="text" />
+
+    <button type="submit" [disabled]="!utilisateurForm.valid">Enregistrer</button>
+  </form>
+</div>

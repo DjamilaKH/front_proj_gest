@@ -1,0 +1,95 @@
+.update-tache-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(192, 0, 0, 0.3); /* légère ombre rouge */
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #c00; /* rouge tunisien */
+    font-weight: 700;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #c00; /* rouge tunisien */
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 40px;           /* même hauteur */
+      padding: 0 10px;        /* padding horizontal */
+      font-size: 1rem;
+      border: 1.5px solid #d9d9d9;
+      border-radius: 6px;
+      box-sizing: border-box; /* important pour largeur fixe */
+      transition: border-color 0.3s ease;
+      color: #333;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #c00;     /* rouge tunisien au focus */
+      box-shadow: 0 0 5px rgba(192, 0, 0, 0.5);
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      min-width: 140px;
+      height: 40px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #c00;  /* rouge tunisien */
+      color: white;
+    }
+
+    .btn-primary:disabled {
+      background-color: #f5baba;
+      cursor: not-allowed;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background-color: #a10000;
+    }
+
+    .btn-secondary {
+      background-color: #eee;
+      color: #c00;
+      border: 1.5px solid #c00;
+    }
+
+    .btn-secondary:hover {
+      background-color: #c00;
+      color: white;
+    }
+  }
+}
+
+.no-tache-message {
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  color: #666;
+}

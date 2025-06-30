@@ -1,0 +1,10 @@
+<div *ngIf="projet">
+  <h2>{{ projet.titre }}</h2>
+  <button class="btn btn-warning" (click)="modifierProjet()">Modifier</button>
+  <p><strong>Description:</strong> {{ projet.description }}</p>
+  <p><strong>Direction:</strong> {{ projet.direction }}</p>
+  <p><strong>Budget:</strong> {{ projet.budget }} TND</p>
+  <p><strong>Statut:</strong> {{ projet.statut }}</p>
+  <p><strong>Date début:</strong> {{ projet.dateDebut | date }}</p>
+  <p><strong>Date fin:</strong> {{ projet.dateFin | date }}</p>
+</div>

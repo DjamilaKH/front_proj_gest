@@ -1,0 +1,24 @@
+<h2>Liste des Tâches</h2> 
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Statut</th>
+      <th>Activité</th>
+      <th>Membre</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tache of taches">
+      <td data-label="Titre">{{ tache.titre }}</td>
+      <td data-label="Statut">{{ tache.statut || 'non défini' }}</td>
+      <td data-label="Activité">{{ tache.activiteId }}</td>
+      <td data-label="Membre">{{ tache.membreId }}</td>
+      <td>
+        <button [routerLink]="['/taches/update', tache.id]">Modifier</button> 
+       <p> <button (click)="supprimerTache(tache.id)">Supprimer</button></p> 
+      </td>
+    </tr>
+  </tbody>
+</table>

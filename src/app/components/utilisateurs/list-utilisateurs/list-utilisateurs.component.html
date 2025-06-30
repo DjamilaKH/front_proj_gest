@@ -1,0 +1,33 @@
+<div class="utilisateur-table">
+  <h2>Liste des utilisateurs</h2>
+ <button routerLink="/users/create" class="ajouter-btn" ><h2 style="color: brown;">➕ Ajouter un utilisateur</h2></button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+        <th>Téléphone</th>
+        <th>Rôle</th>
+        <th>Projet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of utilisateurs">
+        <td>{{ user.nom }}</td>
+        <td>{{ user.prenom }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.tel }}</td>
+        <td>{{ user.roleNom }}</td>
+        <td>{{ user.projetNom }}</td>
+        <td>
+          <button (click)="editerUtilisateur(user.id)">📝</button>
+          <button (click)="supprimerUtilisateur(user.id)">❌</button>
+        </td>
+
+      </tr>
+    </tbody>
+    
+  </table>
+</div>
