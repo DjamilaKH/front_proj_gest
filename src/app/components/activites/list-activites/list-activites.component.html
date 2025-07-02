@@ -1,0 +1,31 @@
+<h2>📌 Liste des Activités</h2>
+
+<div style="text-align: right; margin-bottom: 1rem;">
+  <button routerLink="/activite">➕ Nouvelle activité</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Catégorie</th>
+      <th>Délais</th>
+      <th>Projet</th>
+      <th>Responsable</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let activite of activites">
+      <td>{{ activite.titre }}</td>
+      <td>{{ activite.categorie }}</td>
+      <td>{{ activite.delai | date: 'shortDate' }}</td>
+      <td>{{ activite.projetId }}</td>
+      <td>{{ activite.responsableId }}</td>
+      <td>
+        <button [routerLink]="['/activites/update', activite.id]">Modifier</button>
+        <button (click)="supprimerActivite(activite.id!)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

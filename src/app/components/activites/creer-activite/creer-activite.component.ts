@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActiviteService } from '../../services/activite.service';
-import { Activite } from '../../models/activite.model';
+import { ActiviteService } from '../../../services/activite.service';
+import { Activite } from '../../../models/activite.model';
 
 @Component({
   selector: 'app-creer-activite',

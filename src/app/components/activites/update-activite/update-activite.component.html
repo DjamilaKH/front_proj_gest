@@ -1,0 +1,12 @@
+<form [formGroup]="activiteForm" (ngSubmit)="onSubmit()">
+  <label for="titre">Titre :</label>
+  <input id="titre" formControlName="titre" />
+
+  <label for="categorie">Catégorie :</label>
+  <input id="categorie" formControlName="categorie" />
+
+  <label for="delai">Délai :</label>
+  <input id="delai" type="date" formControlName="delai" />
+
+  <button type="submit" [disabled]="activiteForm.invalid">Modifier</button>
+</form>

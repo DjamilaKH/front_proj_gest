@@ -17,7 +17,7 @@ import { ListProjetsComponent } from './components/projets/list-projets/list-pro
 import { DetailProjetComponent } from './components/projets/detail-projet/detail-projet.component';
 import { EditProjetComponent } from './components/projets/edit-projet/edit-projet.component';
 
-import { CreerActiviteComponent } from './components/creer-activite/creer-activite.component';
+import { CreerActiviteComponent } from './components/activites/creer-activite/creer-activite.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 import { AuthGuard } from './guards/auth.guard';
@@ -27,6 +27,8 @@ import { ListTacheComponent } from './components/taches/list-tache/list-tache.co
 import { UpdateTacheComponent } from './components/taches/update-tache/update-tache.component';
 import { DeleteTacheComponent } from './components/taches/delete-tache/delete-tache.component';
 import { RapportProjetsComponent } from './components/rapport-projets/rapport-projets.component';
+import { ListActivitesComponent } from './components/activites/list-activites/list-activites.component';
+import { UpdateActiviteComponent } from './components/activites/update-activite/update-activite.component';
 
 const routes: Routes = [
   // 🌐 Pages publiques
@@ -54,13 +56,12 @@ const routes: Routes = [
   { path: 'dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] },
 
   // 📁 Projets
-  {
-    path: 'projets',
-    component: ListProjetsComponent,
-    canActivate: [AuthGuard, RoleGuard],
-    data: { role: 'admin' }
-  },
-  {
+{
+  path: 'projets',
+  component: ListProjetsComponent,
+  canActivate: [AuthGuard, RoleGuard],
+  data: { roles: ['admin', 'chef'] } // ✅ ici "roles" avec S
+},  {
     path: 'projets/edit/:id',
     component: EditProjetComponent,
     canActivate: [AuthGuard, RoleGuard],
@@ -69,7 +70,16 @@ const routes: Routes = [
   { path: 'detail-projet/:id', component: DetailProjetComponent, canActivate: [AuthGuard] },
 
   // 🧩 Activités
-  { path: 'activites', component: CreerActiviteComponent, canActivate: [AuthGuard] },
+  { path: 'activite', component: CreerActiviteComponent, canActivate: [AuthGuard] },
+{
+  path: 'activites',
+  component: ListActivitesComponent,
+  canActivate: [AuthGuard, RoleGuard],
+  data: { roles: ['admin', 'chef'] }
+},
+{ path: 'activites/update/:id', component: UpdateActiviteComponent,canActivate: [AuthGuard, RoleGuard],
+  data: { roles: ['admin', 'chef'] } },
+
 
 { path: 'taches/create', component: CreerTacheComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'admin' } },
 { path: 'taches', component: ListTacheComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'admin' } },

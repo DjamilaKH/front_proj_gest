@@ -12,7 +12,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RoleComponent } from './components/role/role.component';
 import { ProjetComponent } from './components/projets/list-projets/projet/projet.component';
-import { CreerActiviteComponent } from './components/creer-activite/creer-activite.component';
+import { CreerActiviteComponent } from './components/activites/creer-activite/creer-activite.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ChefDashboardComponent } from './components/chef-dashboard/chef-dashboard.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
@@ -29,6 +29,9 @@ import { ListTacheComponent } from './components/taches/list-tache/list-tache.co
 import { UpdateTacheComponent } from './components/taches/update-tache/update-tache.component';
 import { DeleteTacheComponent } from './components/taches/delete-tache/delete-tache.component';
 import { RapportProjetsComponent } from './components/rapport-projets/rapport-projets.component';
+import { ListActivitesComponent } from './components/activites/list-activites/list-activites.component';
+import { UpdateActiviteComponent } from './components/activites/update-activite/update-activite.component';
+import { DeleteActiviteComponent } from './components/activites/delete-activite/delete-activite.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { RapportProjetsComponent } from './components/rapport-projets/rapport-pr
     UpdateTacheComponent,
     DeleteTacheComponent,
     RapportProjetsComponent,
+    ListActivitesComponent,
+    UpdateActiviteComponent,
+    DeleteActiviteComponent,
     
   ],
   imports: [

@@ -16,28 +16,16 @@ export class RoleGuard implements CanActivate {
       return false;
     }
 
-    const role = user.roleNom.toLowerCase(); // ✅ Utiliser roleNom au lieu de roleId
-    const currentRoute = route.routeConfig?.path;
+    const role = user.roleNom.toLowerCase(); // ex : 'admin' ou 'chef'
+    const allowedRoles = route.data['roles'] as string[]; // 🔥 la clé attendue dans tes routes
 
-    console.log('🔐 Guard vérifie accès à', currentRoute, 'pour rôle', role);
+    console.log('🔐 Guard vérifie accès à', route.routeConfig?.path, 'pour rôle', role, 'autorisé :', allowedRoles);
 
-    if (
-      (currentRoute === 'admin-dashboard' || currentRoute === 'roles' || currentRoute === 'projets') &&
-      role !== 'admin'
-    ) {
+    if (allowedRoles && !allowedRoles.includes(role)) {
       this.router.navigate(['/unauthorized']);
       return false;
     }
 
-    if (
-      currentRoute === 'chef-dashboard' &&
-      role !== 'chef'
-    ) {
-      this.router.navigate(['/unauthorized']);
-      return false;
-    }
-
-    // ✅ Autorisé
     return true;
   }
 }
