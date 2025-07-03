@@ -32,6 +32,7 @@ import { RapportProjetsComponent } from './components/rapport-projets/rapport-pr
 import { ListActivitesComponent } from './components/activites/list-activites/list-activites.component';
 import { UpdateActiviteComponent } from './components/activites/update-activite/update-activite.component';
 import { DeleteActiviteComponent } from './components/activites/delete-activite/delete-activite.component';
+import { CreateProjetComponent } from './projets/create-projet/create-projet.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { DeleteActiviteComponent } from './components/activites/delete-activite/
     ListActivitesComponent,
     UpdateActiviteComponent,
     DeleteActiviteComponent,
+    CreateProjetComponent,
     
   ],
   imports: [

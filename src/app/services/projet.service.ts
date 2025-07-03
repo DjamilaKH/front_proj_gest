@@ -11,10 +11,13 @@ export class ProjetService {
 
   constructor(private http: HttpClient) {}
 
-  /** Créer un projet */
   create(projet: Projet): Observable<Projet> {
-    return this.http.post<Projet>(this.apiUrl, projet);
-  }
+  const headers = new HttpHeaders({
+    Authorization: 'Bearer ' + localStorage.getItem('token')
+  });
+  return this.http.post<Projet>(this.apiUrl, projet, { headers });
+}
+
   getProjets(): Observable<any[]> {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem('token')

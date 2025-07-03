@@ -1,0 +1,52 @@
+<div class="form-container">
+  <div class="card">
+    <h2>📝 Créer un nouveau projet</h2>
+    <form [formGroup]="projetForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="titre">Titre</label>
+        <input type="text" id="titre" formControlName="titre" placeholder="Titre du projet" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description" placeholder="Décrivez le projet..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="direction">Direction</label>
+        <input type="text" id="direction" formControlName="direction" placeholder="Direction responsable" />
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Budget (TND)</label>
+        <input type="number" id="budget" formControlName="budget" placeholder="Ex: 10000" />
+      </div>
+
+      <div class="form-group">
+        <label for="dateDebut">Date début</label>
+        <input type="date" id="dateDebut" formControlName="dateDebut" />
+      </div>
+
+      <div class="form-group">
+        <label for="dateFin">Date fin</label>
+        <input type="date" id="dateFin" formControlName="dateFin" />
+      </div>
+
+      <div class="form-group">
+        <label for="statut">Statut</label>
+        <select id="statut" formControlName="statut">
+          <option value="Planifié">Planifié</option>
+          <option value="En cours">En cours</option>
+          <option value="Terminé">Terminé</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="chefProjetId">Chef de projet (ID)</label>
+        <input type="text" id="chefProjetId" formControlName="chefProjetId" placeholder="ID du chef de projet" />
+      </div>
+
+      <button type="submit" [disabled]="projetForm.invalid">Créer le projet</button>
+    </form>
+  </div>
+</div>

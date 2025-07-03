@@ -29,6 +29,7 @@ import { DeleteTacheComponent } from './components/taches/delete-tache/delete-ta
 import { RapportProjetsComponent } from './components/rapport-projets/rapport-projets.component';
 import { ListActivitesComponent } from './components/activites/list-activites/list-activites.component';
 import { UpdateActiviteComponent } from './components/activites/update-activite/update-activite.component';
+import { CreateProjetComponent } from './projets/create-projet/create-projet.component';
 
 const routes: Routes = [
   // 🌐 Pages publiques
@@ -56,6 +57,12 @@ const routes: Routes = [
   { path: 'dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] },
 
   // 📁 Projets
+  {
+  path: 'projets/create',
+  component: CreateProjetComponent,canActivate: [AuthGuard, RoleGuard],
+  data: { roles: ['admin', 'chef'] }
+},
+
 {
   path: 'projets',
   component: ListProjetsComponent,
