@@ -39,10 +39,7 @@ const routes: Routes = [
   // 👤 Authentification & utilisateurs
   {
     path: 'users/create',
-    component: RegisterComponent,
-    canActivate: [AuthGuard, RoleGuard],
-    data: { role: 'admin' }
-  },
+    component: RegisterComponent,canActivate: [AuthGuard, RoleGuard],data: { role: 'admin' }},
   {
     path: 'users',
     component: ListUtilisateursComponent,

@@ -28,7 +28,7 @@
     <input id="responsableId" formControlName="responsableId" type="text" />
   </div>
 
-  <button type="submit" [disabled]="activiteForm.invalid">Créer Activité</button>
+  <button type="submit" [disabled]="activiteForm.invalid" routerLink="/activites">Créer Activité</button>
 </form>
 
 <div *ngIf="successMessage" class="success">{{ successMessage }}</div>

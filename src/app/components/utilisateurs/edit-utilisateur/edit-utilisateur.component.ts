@@ -24,19 +24,21 @@ ngOnInit(): void {
   this.utilisateurId = this.route.snapshot.params['id'];
 
   this.utilisateurService.getUtilisateurById(this.utilisateurId).subscribe({
-    next: (data: UtilisateurDetail) => {
-      console.log('DATA REÇUE 🔍', data); 
-      this.utilisateurForm = this.fb.group({
-        nom: [data.nom, Validators.required],
-        prenom: [data.prenom, Validators.required],
-        email: [data.email, [Validators.required, Validators.email]],
-        tel: [data.tel, Validators.required],
-        roleId: [data.role.id, Validators.required],
-        projetId: [data.projet.id, Validators.required]
-      });
-    },
-    error: (err) => console.error('Erreur chargement utilisateur :', err)
-  });}
+  next: (data: UtilisateurDetail) => {
+    console.log('DATA REÇUE 🔍', data); 
+
+    this.utilisateurForm = this.fb.group({
+      nom: [data.nom, Validators.required],
+      prenom: [data.prenom, Validators.required],
+      email: [data.email, [Validators.required, Validators.email]],
+      tel: [data.tel, Validators.required],
+      roleId: [data.role ? data.role.id : '', Validators.required],
+      projetId: [data.projet ? data.projet.id : '', Validators.required]
+    });
+  },
+  error: (err) => console.error('Erreur chargement utilisateur :', err)
+});
+;}
 
   onSubmit(): void {
     if (this.utilisateurForm.valid) {

@@ -2,7 +2,7 @@
   <h2>Modifier l'utilisateur</h2>
 
 <form [formGroup]="utilisateurForm" (ngSubmit)="onSubmit()" *ngIf="utilisateurForm">
-  <div><pre>{{ utilisateurForm.value | json }}</pre></div>
+  <!-- <div><pre>{{ utilisateurForm.value | json }}</pre></div> -->
     <label>Nom :</label>
     <input formControlName="nom" type="text" />
 
