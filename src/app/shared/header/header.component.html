@@ -4,18 +4,22 @@
     <div class="brand-name">TUNISAIR</div>
   </div>
   <nav class="nav-links">
-    <a href="#">Accueil</a>
+    <!-- <a href="#">Accueil</a>
     <a href="#">À propos</a>
-    <a href="#">Contact</a>
-    <a href="#">Connexion</a>
+    <a href="#">Contact</a> -->
+    <a href="signin" style="margin-left: 800px;">Connexion</a>
   </nav>
+ 
   
     <div class="header-right-links">
     <a href="mailto:contact@tunisair.com" class="link-icon">
       📧 <span>E-mail</span>
+<a (click)="logout()" class="link-icon" style="cursor:pointer;">
+  🔒 <span>Déconnexion</span>
+</a>
+    <a href="https://www.tunisieindustrie.nat.tn/fr/home.asp" class="link-icon">
+      ❓ <span></span>
     </a>
-    <a href="#" class="link-icon">
-      ❓ <span>Aide</span>
     </a>
   </div>
 </header>

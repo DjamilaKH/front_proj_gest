@@ -17,4 +17,15 @@ export class ListProjetsComponent implements OnInit {
       error: (err) => console.error('Erreur chargement projets :', err)
     });
   }
+  supprimerProjet(id: any) {
+    if (confirm('Voulez-vous vraiment supprimer ce projet ?')) {
+      this.projetService.deleteProjet(id).subscribe({
+        next: () => {
+          this.projets = this.projets.filter(p => p.id !== id);
+          alert('Projet supprimé avec succès !');
+        },
+        error: (err) => console.error('Erreur suppression projet :', err)
+      });
+    }
+  }
 }

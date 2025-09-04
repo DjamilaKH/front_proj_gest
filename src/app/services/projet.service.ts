@@ -38,4 +38,9 @@ getProjetById(id: string) {
 
 return this.http.get<Projet>(`${this.apiUrl}/${id}`, { headers });
 }
+deleteProjet(id: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.delete(`${this.apiUrl}/${id}`, { headers });
+  }
 }

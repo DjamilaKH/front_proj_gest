@@ -20,8 +20,8 @@
       <td>{{ activite.titre }}</td>
       <td>{{ activite.categorie }}</td>
       <td>{{ activite.delai | date: 'shortDate' }}</td>
-      <td>{{ activite.projetId }}</td>
-      <td>{{ activite.responsableId }}</td>
+<td>{{ activite.projet?.titre }}</td>
+<td>{{ activite.responsable?.nom }} {{ activite.responsable?.prenom }}</td>
       <td>
         <button [routerLink]="['/activites/update', activite.id]">Modifier</button>
         <button (click)="supprimerActivite(activite.id!)">Supprimer</button>

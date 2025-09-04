@@ -50,7 +50,7 @@ export class RegisterComponent {
     this.authService.signup(utilisateur).subscribe({
       next: () => {
         this.message = 'Inscription réussie !';
-        this.router.navigate(['/login']);
+        this.router.navigate(['/users']);
       },
       error: (err) => {
         console.error('Erreur lors de l’inscription :', err);

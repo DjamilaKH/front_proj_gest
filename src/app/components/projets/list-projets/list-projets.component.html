@@ -23,6 +23,9 @@
         <td>{{ projet.direction }}</td>
         <td><a [routerLink]="['/detail-projet', projet.id]">
   <span class="material-icons">info</span>
+  <button (click)="supprimerProjet(projet.id)" class="btn-delete">
+            <span class="material-icons">delete</span>
+          </button>
 </a>
 
 

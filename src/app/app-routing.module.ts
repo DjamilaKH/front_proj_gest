@@ -50,7 +50,7 @@ const routes: Routes = [
 
   // 🧑‍💼 Dashboards
   { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard, RoleGuard] },
-  { path: 'chef-dashboard', component: ChefDashboardComponent, canActivate: [AuthGuard, RoleGuard] },
+  { path: 'chef-dashboard', component: ChefDashboardComponent, canActivate: [AuthGuard, RoleGuard],data: { roles: ['admin', 'chef'] } },
   { path: 'dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] },
 
   // 📁 Projets

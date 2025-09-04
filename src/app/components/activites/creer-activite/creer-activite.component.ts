@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActiviteService } from '../../../services/activite.service';
 import { Activite } from '../../../models/activite.model';
+import { Router } from '@angular/router'; // <-- Importer le Router
 
 @Component({
   selector: 'app-creer-activite',
@@ -9,11 +10,15 @@ import { Activite } from '../../../models/activite.model';
   styleUrls: ['./creer-activite.component.scss']
 })
 export class CreerActiviteComponent {
-  activiteForm: FormGroup;       // <-- déclaration ici
-  successMessage: string = '';   // <-- déclaration ici
-  errorMessage: string = '';     // <-- déclaration ici
+  activiteForm: FormGroup;
+  successMessage: string = '';
+  errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private activiteService: ActiviteService) {
+  constructor(
+    private fb: FormBuilder, 
+    private activiteService: ActiviteService,
+    private router: Router // <-- Injecter le Router
+  ) {
     this.activiteForm = this.fb.group({
       titre: ['', Validators.required],
       categorie: [''],
@@ -31,6 +36,9 @@ export class CreerActiviteComponent {
           this.successMessage = "Activité créée avec succès !";
           this.errorMessage = '';
           this.activiteForm.reset();
+          
+          // ⬇ Redirection après succès
+          this.router.navigate(['/activites']);
         },
         error: (err) => {
           this.errorMessage = "Erreur lors de la création de l'activité.";
