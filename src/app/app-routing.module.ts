@@ -7,7 +7,6 @@ import { RegisterComponent } from './auth/register/register.component';
 
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ChefDashboardComponent } from './components/chef-dashboard/chef-dashboard.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 
 import { RoleComponent } from './components/role/role.component';
 import { ListUtilisateursComponent } from './components/utilisateurs/list-utilisateurs/list-utilisateurs.component';
@@ -30,6 +29,7 @@ import { RapportProjetsComponent } from './components/rapport-projets/rapport-pr
 import { ListActivitesComponent } from './components/activites/list-activites/list-activites.component';
 import { UpdateActiviteComponent } from './components/activites/update-activite/update-activite.component';
 import { CreateProjetComponent } from './projets/create-projet/create-projet.component';
+import { ResponsableDashboardComponent } from './components/responsable-dashboard/responsable-dashboard.component';
 
 const routes: Routes = [
   // 🌐 Pages publiques
@@ -39,7 +39,7 @@ const routes: Routes = [
   // 👤 Authentification & utilisateurs
   {
     path: 'users/create',
-    component: RegisterComponent,canActivate: [AuthGuard, RoleGuard],data: { role: 'admin' }},
+    component: RegisterComponent,},
   {
     path: 'users',
     component: ListUtilisateursComponent,
@@ -48,10 +48,11 @@ const routes: Routes = [
   },
   { path: 'users/edit/:id', component: EditUtilisateurComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'admin' } },
 
-  // 🧑‍💼 Dashboards
+  // 🧑‍💼 DashboardscanActivate: [AuthGuard, RoleGuard]
   { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard, RoleGuard] },
+    { path: 'responsable-dashboard', component: ResponsableDashboardComponent,  },
+
   { path: 'chef-dashboard', component: ChefDashboardComponent, canActivate: [AuthGuard, RoleGuard],data: { roles: ['admin', 'chef'] } },
-  { path: 'dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] },
 
   // 📁 Projets
   {

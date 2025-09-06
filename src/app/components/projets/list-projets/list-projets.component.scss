@@ -25,3 +25,23 @@
     }
   }
 }
+.actions-cell {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+  .btn-info, .btn-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-info {
+    color: #0066cc;
+  }
+
+  .btn-delete {
+    color: red;
+  }
+}
