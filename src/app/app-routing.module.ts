@@ -36,10 +36,10 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: LoginComponent },
 
-  // 👤 Authentification & utilisateurs
+  // 👤 Authentification & utilisateurs canActivate: [AuthGuard, RoleGuard],data: { role: 'admin' }
   {
     path: 'users/create',
-    component: RegisterComponent,canActivate: [AuthGuard, RoleGuard],data: { role: 'admin' }},
+    component: RegisterComponent,},
   {
     path: 'users',
     component: ListUtilisateursComponent,
