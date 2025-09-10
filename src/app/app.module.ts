@@ -15,7 +15,6 @@ import { ProjetComponent } from './components/projets/list-projets/projet/projet
 import { CreerActiviteComponent } from './components/activites/creer-activite/creer-activite.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ChefDashboardComponent } from './components/chef-dashboard/chef-dashboard.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 import { ListUtilisateursComponent } from './components/utilisateurs/list-utilisateurs/list-utilisateurs.component';
 import { EditUtilisateurComponent } from './components/utilisateurs/edit-utilisateur/edit-utilisateur.component';
@@ -33,6 +32,7 @@ import { ListActivitesComponent } from './components/activites/list-activites/li
 import { UpdateActiviteComponent } from './components/activites/update-activite/update-activite.component';
 import { DeleteActiviteComponent } from './components/activites/delete-activite/delete-activite.component';
 import { CreateProjetComponent } from './projets/create-projet/create-projet.component';
+import { ResponsableDashboardComponent } from './components/responsable-dashboard/responsable-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,6 @@ import { CreateProjetComponent } from './projets/create-projet/create-projet.com
     CreerActiviteComponent,
     AdminDashboardComponent,
     ChefDashboardComponent,
-    UserDashboardComponent,
     UnauthorizedComponent,
     ListUtilisateursComponent,
     EditUtilisateurComponent,
@@ -64,6 +63,7 @@ import { CreateProjetComponent } from './projets/create-projet/create-projet.com
     UpdateActiviteComponent,
     DeleteActiviteComponent,
     CreateProjetComponent,
+    ResponsableDashboardComponent,
     
   ],
   imports: [

@@ -10,7 +10,7 @@
         <th>Date fin</th>
         <th>Budget</th>
         <th>Direction</th>
-        <th>Détails</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -21,15 +21,17 @@
         <td>{{ projet.dateFin | date:'dd/MM/yyyy' }}</td>
         <td>{{ projet.budget | currency:'TND' }}</td>
         <td>{{ projet.direction }}</td>
-        <td><a [routerLink]="['/detail-projet', projet.id]">
-  <span class="material-icons">info</span>
-  <button (click)="supprimerProjet(projet.id)" class="btn-delete">
+        <td class="actions-cell">
+          <!-- Bouton détail -->
+          <a [routerLink]="['/detail-projet', projet.id]" class="btn-info">
+            <span class="material-icons">info</span></a>
+          
+
+          <!-- Bouton suppression -->
+          <button (click)="supprimerProjet(projet.id)" class="btn-delete">
             <span class="material-icons">delete</span>
           </button>
-</a>
-
-
-</td>
+        </td>
       </tr>
     </tbody>
   </table>
